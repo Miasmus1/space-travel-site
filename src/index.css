@@ -111,11 +111,10 @@ select {
     gap: var(--gap, 1rem)
 }
 
-.flow > *:where(:not(:first-child)) { /*  This is same as * + * no specificity */
+/*  This is same as * + * no specificity */
+.flow > *:where(:not(:first-child)) { 
   margin-top: var(--flow-space, 1rem);
-  outline: 1px solid red;
 }
-
 
 .container {
   padding-inline: 2rem;
@@ -242,3 +241,101 @@ select {
 /* .large-button:hover {
   box-shadow: 0 0 0 5rem hsl( var(--clr-white) / .25 );
 } */
+
+.primary-navigation {
+  --gap: 8rem;
+  --underline-gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+
+.primary-navigation a > span {
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+
+.underline-indicators > * {
+  cursor: pointer;
+  padding: var(--underline-gap, 1rem) 0;
+  border: 0;
+  border-bottom: .2rem solid hsl( var(--clr-white) / 0);
+}
+
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
+  border-color: hsl(var(--clr-white) / .5);
+}
+
+.underline-indicators > .active,
+.underline-indicators > [aria-selected="true"] {
+  color: hsl(var(--clr-white) / 1);
+  border-color: hsl(var(--clr-white) / 1);
+}
+
+.tab-list {
+  --gap: 2rem;
+}
+
+.dot-indicators > * {
+  cursor: pointer;
+  border: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: .5em;
+  background-color: hsl( var(--clr-white) / .25 );
+}
+
+.dot-indicators > *:hover,
+.dot-indicators > *:focus {
+  background-color: hsl( var(--clr-white) / .5 );
+}
+
+.dot-indicators > [aria-selected="true"] {
+  background-color: hsl( var(--clr-white) / 1 );
+}
+
+.number-indicators > * {
+  all: unset;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 1px solid hsl( var(--clr-white) / .25 );
+  color: hsl( var(--clr-white) / .25 );
+  text-align: center;
+}
+
+.number-indicators > *:hover,
+.number-indicators > *:focus {
+  border-color: hsl( var(--clr-white) / .75 );
+  color: hsl( var(--clr-white) / .75 );
+}
+
+.number-indicators > [aria-selected="true"] {
+  background-color: hsl( var(--clr-white) / 1 );
+  color: hsl( var(--clr-dark) )
+}
+
+/* ------------------ */
+/* My Header          */
+/* ------------------ */
+
+.design-header {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.design-header > img {
+  width: 3rem;
+}
+
+.color-type-mr-3 {
+  margin-right: 3.875rem;
+}
+

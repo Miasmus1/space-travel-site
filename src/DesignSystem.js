@@ -1,63 +1,86 @@
 const DesignSystem = () => {
   return (
     <div className="container">
-      <h1>Design System</h1>
+      <header className="flex design-header">
+        <img src="/assets/shared/logo.svg" />
+        <h1 className="text-accent uppercase ff-sans-cond letter-spacing-1 fs-500">
+          Design System
+        </h1>
+      </header>
 
       <section id="colors" style={{ margin: '4rem 0' }}>
-        <h2 className="numbered-title">
+        <h2 className="numbered-title" style={{ marginBottom: '3rem' }}>
           <span>01</span> colors
         </h2>
 
         <div className="flex">
           <div className="flex-grow">
             <div
-              className="bg-dark text-white"
-              style={{ padding: '3rem 1rem 1rem', border: '1px solid white' }}
+              className="bg-dark text-white ff-serif fs-500"
+              style={{
+                padding: '3rem 1.5rem 1rem',
+                marginBottom: '1rem',
+                border: '1px solid white',
+              }}
             >
               #0B0D17
             </div>
             <p>
-              <span className="text-accent">RGB</span> 11, 13, 23
+              <span className="text-accent color-type-mr-3">RGB</span> 11, 13,
+              23
             </p>
             <p>
-              <span className="text-accent">HSL</span> 230°, 35%, 7%
+              <span className="text-accent color-type-mr-3">HSL</span> 230°,
+              35%, 7%
             </p>
           </div>
 
           <div className="flex-grow">
             <div
-              className="bg-accent text-dark"
-              style={{ padding: '3rem 1rem 1rem', border: '1px solid white' }}
+              className="bg-accent text-dark ff-serif fs-500"
+              style={{
+                padding: '3rem 1.5rem 1rem',
+                marginBottom: '1rem',
+                border: '1px solid white',
+              }}
             >
-              #0B0D17
+              #D0D6F9
             </div>
             <p>
-              <span className="text-accent">RGB</span> 11, 13, 23
+              <span className="text-accent color-type-mr-3">RGB</span> 208, 214,
+              249
             </p>
             <p>
-              <span className="text-accent">HSL</span> 230°, 35%, 7%
+              <span className="text-accent color-type-mr-3">HSL</span> 231°,
+              77%, 90%
             </p>
           </div>
 
           <div className="flex-grow">
             <div
-              className="bg-white text-dark"
-              style={{ padding: '3rem 1rem 1rem', border: '1px solid white' }}
+              className="bg-white text-dark ff-serif fs-500"
+              style={{
+                padding: '3rem 1.5rem 1rem',
+                marginBottom: '1rem',
+                border: '1px solid white',
+              }}
             >
-              #0B0D17
+              #FFFFFF
             </div>
             <p>
-              <span className="text-accent">RGB</span> 11, 13, 23
+              <span className="text-accent color-type-mr-3">RGB</span> 255, 255,
+              255
             </p>
             <p>
-              <span className="text-accent">HSL</span> 230°, 35%, 7%
+              <span className="text-accent color-type-mr-3">HSL</span> 0°, 0%,
+              100%
             </p>
           </div>
         </div>
       </section>
 
       <section id="typography" style={{ margin: '4rem 0' }}>
-        <h2 className="numbered-title">
+        <h2 className="numbered-title" style={{ marginBottom: '3rem' }}>
           <span>02 </span>Typography
         </h2>
         <div className="flex">
@@ -152,15 +175,48 @@ const DesignSystem = () => {
         </div>
       </section>
 
-      <section class="flow" id="interactive-elements">
-        <h2 class="numbered-title">
+      <section className="flow" id="interactive-elements">
+        <h2 className="numbered-title">
           <span>03</span> Interactive elements
         </h2>
 
         {/* navigation */}
-        <div></div>
+        <div>
+          <nav
+            className="flex"
+            style={{ alignItems: 'center', flexDirection: 'column' }}
+          >
+            <ul
+              className="primary-navigation underline-indicators flex"
+              style={{ justifyContent: 'center' }}
+            >
+              <li className="active">
+                <a href="#" className="uppercase text-white letter-spacing-2">
+                  <span>01</span>
+                  Active
+                </a>
+              </li>
+              <li>
+                <a href="#" className="uppercase text-white letter-spacing-2">
+                  <span>02</span>
+                  Hovered
+                </a>
+              </li>
+              <li>
+                <a href="#" className="uppercase text-white letter-spacing-2">
+                  <span>03</span>
+                  Idle
+                </a>
+              </li>
+            </ul>
+            <p className="text-accent">Different States of Navigation Bar</p>
+          </nav>
+        </div>
 
-        <div class="flex">
+        <div
+          className="flex"
+          style={{ marginTop: '5rem', justifyContent: 'space-around' }}
+        >
           <div style={{ marginTop: '5rem' }}>
             {/* explore button */}
             <a
@@ -169,14 +225,68 @@ const DesignSystem = () => {
             >
               Explore
             </a>
+            <p
+              className="text-accent"
+              style={{ textAlign: 'center', marginTop: '2rem' }}
+            >
+              Landing Page Main Button
+            </p>
           </div>
 
-          <div style={{ marginBottom: '50vh' }}>
+          <div
+            className="flow"
+            style={{
+              marginBottom: '50vh',
+              '--flow-space': '4rem',
+            }}
+          >
             {/* Tabs */}
+            <div className="tab-list underline-indicators flex">
+              <button
+                aria-selected="true"
+                className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
+              >
+                Moon
+              </button>
+              <button
+                aria-selected="false"
+                className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
+              >
+                Mars
+              </button>
+              <button
+                aria-selected="false"
+                className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
+              >
+                Europa
+              </button>
+            </div>
 
             {/* Dots */}
+            <div className="dot-indicators flex">
+              <button aria-selected="true">
+                <span className="sr-only">Slide title</span>
+              </button>
+              <button aria-selected="false">
+                <span className="sr-only">Slide title</span>
+              </button>
+              <button aria-selected="false">
+                <span className="sr-only">Slide title</span>
+              </button>
+            </div>
 
             {/* Numbers */}
+            <div className="number-indicators flex ff-serif">
+              <button aria-selected="true">
+                <span>1</span>
+              </button>
+              <button aria-selected="false">
+                <span>2</span>
+              </button>
+              <button aria-selected="false">
+                <span>3</span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
