@@ -1,0 +1,12 @@
+hr {
+  background-color: #979797;
+  border: 0 none;
+  height: 1px;
+  width: 473px;
+  margin-left: 10rem;
+}
+
+.navbar {
+  flex-basis: 83rem;
+  width: 200px;
+}

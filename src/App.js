@@ -1,7 +1,14 @@
 import DesignSystem from './DesignSystem';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
 
 function App() {
-  return <DesignSystem></DesignSystem>;
+  return (
+    <>
+      <Navbar />
+      <Home />
+    </>
+  );
 }
 
 export default App;

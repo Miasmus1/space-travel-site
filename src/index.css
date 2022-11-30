@@ -63,6 +63,9 @@ body {
   background: hsl(var(--clr-dark));
   line-height: 1.5;
   min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: min-content, 1fr;
 }
 
 /* Make images easier to work with */
@@ -120,6 +123,20 @@ select {
   padding-inline: 2rem;
   margin-inline: auto;
   max-width: 80rem;
+}
+
+.grid-container {
+  display: grid;
+  column-gap: var(--container-gap, 2rem);
+  grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2em, 1fr);
+}
+
+.grid-container > *:first-child {
+  grid-column: 2;
+}
+
+.grid-container > *:last-child{
+  grid-column: 3;
 }
 
 .sr-only {
@@ -211,7 +228,7 @@ select {
 
 .large-button {
   position: relative;
-  display: grid; /* or inline-block */
+  display: inline-grid; /* or inline-block */
   place-items: center;
   padding: 0 2em;
   text-decoration: none;
