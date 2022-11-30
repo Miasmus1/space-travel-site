@@ -62,10 +62,13 @@ body {
   color: hsl(var(--clr-white));
   background: hsl(var(--clr-dark));
   line-height: 1.5;
-  min-height: 100vh;
+  
+}
 
+#root {
+  min-height: 100vh;
   display: grid;
-  grid-template-rows: min-content, 1fr;
+  grid-template-rows: min-content 1fr;
 }
 
 /* Make images easier to work with */
@@ -126,17 +129,25 @@ select {
 }
 
 .grid-container {
+  border: 5px solid red;
   display: grid;
-  column-gap: var(--container-gap, 2rem);
-  grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2em, 1fr);
 }
 
-.grid-container > *:first-child {
-  grid-column: 2;
-}
+@media screen and (min-width: 45rem) {
+  .grid-container {
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
+  }
 
-.grid-container > *:last-child{
-  grid-column: 3;
+  .grid-container > *:first-child {
+    grid-column: 2;
+    outline: 1px solid yellow;
+  }
+  
+  .grid-container > *:last-child{
+    grid-column: 3;
+    outline: 1px solid green;
+  }
 }
 
 .sr-only {
