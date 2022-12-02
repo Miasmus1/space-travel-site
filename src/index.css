@@ -128,10 +128,10 @@ select {
   flex-grow: 1;
 }
 
-.flex.even-columns > * {
+/* .flex.even-columns > * {
   flex-basis: 100%;
   outline: 1px solid limegreen;
-}
+} */
 
 .grid {
   display: grid;
@@ -154,12 +154,20 @@ select {
 }
 
 .grid-container {
+  text-align: center;
   border: 5px solid red;
   display: grid;
+  place-items: center;
+  padding-inline: 1rem;
+}
+
+.grid-container * {
+  max-width: 50ch;
 }
 
 @media screen and (min-width: 45em) {
   .grid-container {
+    text-align: left;
     column-gap: var(--container-gap, 2rem);
     grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
         2rem,
@@ -175,6 +183,11 @@ select {
   .grid-container > *:last-child {
     grid-column: 3;
     outline: 1px solid green;
+  }
+
+  .grid-container--home {
+    padding-bottom: max(6rem, 20vh);
+    align-items: end;
   }
 }
 
@@ -308,6 +321,7 @@ select {
 /* ------------------ */
 
 .large-button {
+  font-size: 2rem;
   position: relative;
   display: inline-grid; /* or inline-block */
   place-items: center;
@@ -435,4 +449,28 @@ select {
 
 .color-type-mr-3 {
   margin-right: 3.875rem;
+}
+
+/* ------------------------- */
+/* Page Specific Backgrounds */
+/* ------------------------- */
+
+/* Home */
+#root {
+  background-size: cover;
+  background-position: bottom center;
+  background-image: url(../public/assets/home/background-home-mobile.jpg);
+}
+
+@media screen and (min-width: 35rem) {
+  #root {
+    background-position: center center;
+    background-image: url(../public/assets/home/background-home-tablet.jpg);
+  }
+}
+
+@media screen and (min-width: 45rem) {
+  #root {
+    background-image: url(../public/assets/home/background-home-desktop.jpg);
+  }
 }

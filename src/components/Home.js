@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <div className="container flex even-columns" style={{ maxWidth: '60rem' }}>
+    <div className="grid-container grid-container--home">
       <div>
         <h1 className="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
           So, you want to travel to
@@ -14,16 +14,10 @@ const Home = () => {
         </p>
       </div>
 
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          alignItems: 'flex-start',
-        }}
-      >
+      <div>
         <a
           href="#"
-          className="large-button bg-white text-dark ff-serif fs-600 letter-spacing-1 uppercase"
+          className="large-button bg-white text-dark ff-serif letter-spacing-1 uppercase"
         >
           Explore
         </a>
