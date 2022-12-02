@@ -128,6 +128,11 @@ select {
   flex-grow: 1;
 }
 
+.flex.even-columns > * {
+  flex-basis: 100%;
+  outline: 1px solid limegreen;
+}
+
 .grid {
   display: grid;
   gap: var(--gap, 1rem);

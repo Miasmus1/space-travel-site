@@ -1,11 +1,9 @@
-import styles from './Home.module.css';
-
 const Home = () => {
   return (
-    <div className="grid-container">
+    <div className="container flex even-columns" style={{ maxWidth: '60rem' }}>
       <div>
         <h1 className="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
-          So, you want to travel to{' '}
+          So, you want to travel to
           <span className="fs-900 ff-serif text-white d-block">Space</span>
         </h1>
         <p>
@@ -16,7 +14,13 @@ const Home = () => {
         </p>
       </div>
 
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'flex-start',
+        }}
+      >
         <a
           href="#"
           className="large-button bg-white text-dark ff-serif fs-600 letter-spacing-1 uppercase"
