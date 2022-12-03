@@ -6,13 +6,18 @@ const NavBar = () => {
       <div>
         <img src="/assets/shared/logo.svg" />
       </div>
+      <button className="mobile-nav-toggle" aria-controls="primary-navigation">
+        <span className="sr-only" aria-expanded="false">
+          Menu
+        </span>
+      </button>
       <nav
         className="flex"
         style={{ alignItems: 'center', flexDirection: 'row' }}
       >
         <ul
+          id="primary-navigation"
           className="primary-navigation underline-indicators flex navbar"
-          style={{ justifyContent: 'center' }}
         >
           <li className="active">
             <a
