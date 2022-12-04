@@ -1,12 +1,27 @@
-import styles from './Navbar.module.css';
+import { useState } from 'react';
 
 const NavBar = () => {
+  const [toggleNavigation, setToggleNavigation] = useState(false);
+
+  const handleToggleNavigation = () => {
+    setToggleNavigation(!toggleNavigation);
+  };
+
   return (
     <header className="primary-header flex">
       <div>
-        <img src="/assets/shared/logo.svg" />
+        <img
+          src="/assets/shared/logo.svg"
+          alt="Space Tourism Logo"
+          className="logo"
+        />
       </div>
-      <button className="mobile-nav-toggle" aria-controls="primary-navigation">
+      <button
+        onClick={handleToggleNavigation}
+        className="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded={toggleNavigation}
+      >
         <span className="sr-only" aria-expanded="false">
           Menu
         </span>
@@ -18,13 +33,14 @@ const NavBar = () => {
         <ul
           id="primary-navigation"
           className="primary-navigation underline-indicators flex navbar"
+          data-visibility={toggleNavigation}
         >
           <li className="active">
             <a
               href="#"
               className="ff-sans-cond uppercase text-white letter-spacing-2"
             >
-              <span>00</span>
+              <span aria-hidden="true">00</span>
               Home
             </a>
           </li>
@@ -33,7 +49,7 @@ const NavBar = () => {
               href="#"
               className="ff-sans-cond uppercase text-white letter-spacing-2"
             >
-              <span>01</span>
+              <span aria-hidden="true">01</span>
               Destination
             </a>
           </li>
@@ -42,7 +58,7 @@ const NavBar = () => {
               href="#"
               className="ff-sans-cond uppercase text-white letter-spacing-2"
             >
-              <span>02</span>
+              <span aria-hidden="true">02</span>
               Crew
             </a>
           </li>
@@ -51,7 +67,7 @@ const NavBar = () => {
               href="#"
               className="ff-sans-cond uppercase text-white letter-spacing-2"
             >
-              <span>03</span>
+              <span aria-hidden="true">03</span>
               Technology
             </a>
           </li>

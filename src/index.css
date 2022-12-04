@@ -79,6 +79,8 @@ body {
   color: hsl(var(--clr-white));
   background: hsl(var(--clr-dark));
   line-height: 1.5;
+
+  overflow-x: hidden;
 }
 
 #root {
@@ -185,6 +187,8 @@ select {
   .grid-container--home {
     padding-bottom: max(6rem, 20vh);
     align-items: end;
+
+    overflow-x: hidden;
   }
 }
 
@@ -198,6 +202,21 @@ select {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap; /* added line */
   border: 0;
+}
+
+.skip-to-content {
+  position: absolute;
+  z-index: 9999;
+  background: hsl(var(--clr-white));
+  color: hsl(var(--clr-dark));
+  padding: 0.5rem 1rem;
+  margin-inline: auto;
+  transform: translateY(-100%);
+  transition: transform 0.2s ease-out;
+}
+
+.skip-to-content:focus {
+  transform: translateY(0);
 }
 
 .box {
@@ -351,7 +370,21 @@ select {
   box-shadow: 0 0 0 5rem hsl( var(--clr-white) / .25 );
 } */
 
+/* Primary Navigation */
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+}
+
 .primary-navigation {
+  --gap: clamp(1.5rem, 5vw, 3.5rem);
   --underline-gap: 2rem;
   list-style: none;
   padding: 0;
@@ -366,6 +399,10 @@ select {
   }
 }
 
+.mobile-nav-toggle {
+  display: none;
+}
+
 .primary-navigation a {
   text-decoration: none;
 }
@@ -373,6 +410,96 @@ select {
 .primary-navigation a > span {
   font-weight: 700;
   margin-right: 0.5em;
+}
+
+@media screen and (max-width: 35em) {
+  .primary-navigation {
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+    --underline-gap: 0.5rem;
+    list-style: none;
+    padding-block: min(20rem, 15vh);
+    padding-left: 2rem;
+    margin: 0;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .primary-navigation[data-visibility='true'] {
+    transform: translateX(0);
+  }
+
+  .primary-navigation.underline-indicators > .active {
+    border: 0;
+    border-right: 0.2rem solid hsl(var(--clr-white) / 0);
+  }
+
+  .underline-indicators > .active,
+  .underline-indicators > [aria-selected='true'] {
+    color: hsl(var(--clr-white) / 1);
+    border-color: hsl(var(--clr-white) / 1);
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    right: 1rem;
+    top: 2rem;
+    background: transparent;
+    background-image: url(../public//assets/shared/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .mobile-nav-toggle[aria-expanded='true'] {
+    background-image: url(../public//assets/shared/icon-close.svg);
+  }
+
+  .mobile-nav-toggle:focus-visible {
+    outline: 5px solid white;
+    outline-offset: 5px;
+  }
+}
+
+@media screen and (min-width: 35em) {
+  .primary-navigation {
+    padding-inline: clamp(3rem, 5vw, 5rem);
+  }
+}
+
+@media screen and (min-width: 35em) and (max-width: 44.999em) {
+  .primary-navigation a > span {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 45em) {
+  .primary-header::after {
+    content: '';
+    display: block;
+    position: relative;
+    height: 1px;
+    width: 100%;
+    inset: 0;
+    background: hsl(var(--clr-white) / 0.25);
+    order: 1;
+    margin-right: -2.5rem;
+  }
+
+  nav {
+    order: 2;
+  }
+
+  .primary-navigation {
+    margin-block: 2rem;
+  }
 }
 
 .underline-indicators > * {
@@ -391,32 +518,6 @@ select {
 .underline-indicators > [aria-selected='true'] {
   color: hsl(var(--clr-white) / 1);
   border-color: hsl(var(--clr-white) / 1);
-}
-
-@media screen and (max-width: 35rem) {
-  .primary-navigation {
-    position: fixed;
-
-    z-index: 1000;
-    inset: 0 0 0 30%;
-    --underline-gap: 0.5rem;
-    list-style: none;
-    padding-block: min(20rem, 15vh);
-    padding-left: 2rem;
-    margin: 0;
-    flex-direction: column;
-  }
-
-  .primary-navigation.underline-indicators > .active {
-    border: 0;
-    border-right: 0.2rem solid hsl(var(--clr-white) / 0);
-  }
-
-  .underline-indicators > .active,
-  .underline-indicators > [aria-selected='true'] {
-    color: hsl(var(--clr-white) / 1);
-    border-color: hsl(var(--clr-white) / 1);
-  }
 }
 
 .tab-list {
