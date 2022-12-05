@@ -1,6 +1,9 @@
+import { Routes, Route } from "react-router-dom";
+
 import DesignSystem from './DesignSystem';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import Destination from "./components/Destination";
 
 function App() {
   return (
@@ -9,7 +12,10 @@ function App() {
         Skip to content
       </a>
       <Navbar />
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/destination" element={<Destination />} />
+      </Routes>
     </>
   );
 }

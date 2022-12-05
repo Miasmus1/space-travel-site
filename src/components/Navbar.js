@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 const NavBar = () => {
@@ -35,42 +36,37 @@ const NavBar = () => {
           className="primary-navigation underline-indicators flex navbar"
           data-visibility={toggleNavigation}
         >
-          <li className="active">
-            <a
-              href="#"
-              className="ff-sans-cond uppercase text-white letter-spacing-2"
-            >
-              <span aria-hidden="true">00</span>
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="ff-sans-cond uppercase text-white letter-spacing-2"
-            >
-              <span aria-hidden="true">01</span>
-              Destination
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="ff-sans-cond uppercase text-white letter-spacing-2"
-            >
-              <span aria-hidden="true">02</span>
-              Crew
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="ff-sans-cond uppercase text-white letter-spacing-2"
-            >
-              <span aria-hidden="true">03</span>
-              Technology
-            </a>
-          </li>
+          <NavLink
+            className={`ff-sans-cond uppercase text-white letter-spacing-2 
+            ${(navData) => (navData.isActive ? 'active' : '')}`}
+            to="/"
+          >
+            <span aria-hidden="true">00</span>Home
+          </NavLink>
+
+          <NavLink
+            className={`ff-sans-cond uppercase text-white letter-spacing-2 
+            ${(navData) => (navData.isActive ? 'active' : '')}`}
+            to="/destination"
+          >
+            <span aria-hidden="true">01</span>Destination
+          </NavLink>
+
+          <NavLink
+            className={`ff-sans-cond uppercase text-white letter-spacing-2 
+            ${(navData) => (navData.isActive ? 'active' : '')}`}
+            to="/crew"
+          >
+            <span aria-hidden="true">02</span>Crew
+          </NavLink>
+
+          <NavLink
+            className={`ff-sans-cond uppercase text-white letter-spacing-2 
+            ${(navData) => (navData.isActive ? 'active' : '')}`}
+            to="/technology"
+          >
+            <span aria-hidden="true">03</span>Technology
+          </NavLink>
         </ul>
       </nav>
     </header>
