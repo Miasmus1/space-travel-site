@@ -248,17 +248,26 @@ const DesignSystem = () => {
               >
                 Moon
               </button>
+
               <button
                 aria-selected="false"
                 className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
               >
                 Mars
               </button>
+
               <button
                 aria-selected="false"
                 className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
               >
                 Europa
+              </button>
+
+              <button
+                aria-selected="false"
+                className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
+              >
+                Titan
               </button>
             </div>
 
