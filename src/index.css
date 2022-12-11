@@ -150,47 +150,14 @@ select {
   margin-top: var(--flow-space, 1rem);
 }
 
+.flow--space-small {
+  --flow-space: 0.75rem;
+}
+
 .container {
   padding-inline: 2rem;
   margin-inline: auto;
   max-width: 80rem;
-}
-
-.grid-container {
-  text-align: center;
-  display: grid;
-  place-items: center;
-  padding-inline: 1rem;
-}
-
-.grid-container * {
-  max-width: 50ch;
-}
-
-@media screen and (min-width: 45em) {
-  .grid-container {
-    text-align: left;
-    column-gap: var(--container-gap, 2rem);
-    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
-        2rem,
-        1fr
-      );
-  }
-
-  .grid-container > *:first-child {
-    grid-column: 2;
-  }
-
-  .grid-container > *:last-child {
-    grid-column: 3;
-  }
-
-  .grid-container--home {
-    padding-bottom: max(6rem, 20vh);
-    align-items: end;
-
-    overflow-x: hidden;
-  }
 }
 
 .sr-only {
@@ -505,9 +472,10 @@ select {
 
 .underline-indicators > * {
   cursor: pointer;
-  padding: var(--underline-gap, 1rem) 0;
+  padding: var(--underline-gap, 0.5rem) 0;
   border: 0;
   border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+  background-color: transparent;
 }
 
 .underline-indicators > *:hover,
@@ -565,9 +533,9 @@ select {
   color: hsl(var(--clr-dark));
 }
 
-/* ------------------ */
-/* My Header          */
-/* ------------------ */
+/* -------------------------- */
+/* My Header - Design System */
+/* ------------------------ */
 
 .design-header {
   justify-content: space-between;
@@ -604,5 +572,175 @@ select {
 @media screen and (min-width: 45rem) {
   #root {
     background-image: url(../public/assets/home/background-home-desktop.jpg);
+  }
+}
+
+/* ------------------------- */
+/* Page Layout               */
+/* ------------------------- */
+
+.grid-container {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding-inline: 1rem;
+  padding-bottom: 4rem;
+}
+
+.grid-container p:not([class]) {
+  max-width: 50ch;
+}
+
+.numbered-title {
+  grid-area: title; /* Only works if there is grid area named "title" */
+}
+
+/* ------------------------- */
+/* Destination Page Layout   */
+/* ------------------------- */
+
+.grid-container--destination {
+  --flow-space: 2rem;
+  grid-template-areas:
+    'title'
+    'image'
+    'tabs'
+    'content';
+}
+
+.grid-container--destination > picture {
+  grid-area: image;
+  max-width: 60%;
+}
+
+.grid-container--destination > .tab-list {
+  grid-area: tabs;
+}
+
+.grid-container--destination > .destination-info {
+  grid-area: content;
+}
+
+.destination-meta {
+  flex-direction: column;
+  border-top: 1px solid hsl(var(--clr-white) / 0.1);
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+  align-items: center;
+}
+
+.destination-meta p {
+  font-size: 1.75rem;
+}
+
+/* ------------------------- */
+/* Crew Page Layout          */
+/* ------------------------- */
+
+.grid-container--crew {
+  grid-template-areas:
+    'title'
+    'image'
+    'dots'
+    'content';
+}
+
+.grid-container--crew > picture {
+  grid-area: image;
+  max-width: 60%;
+  border-bottom: 1px solid hsl(var(--clr-white) / 0.1);
+}
+
+.grid-container--crew > .dot-indicators {
+  grid-area: dots;
+}
+
+.grid-container--crew > .crew-info {
+  grid-area: content;
+}
+
+.grid-container--crew > .crew-info h2 {
+  color: hsl(var(--clr-white) / 0.5);
+}
+
+@media screen and (min-width: 35em) {
+  .numbered-title {
+    justify-self: start;
+    margin-block-start: 2rem;
+  }
+
+  .destination-meta {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .grid-container--crew {
+    padding-bottom: 0;
+    grid-template-areas:
+      'title'
+      'content'
+      'dots'
+      'image';
+  }
+}
+
+@media screen and (min-width: 45em) {
+  .grid-container {
+    text-align: left;
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
+        2rem,
+        1fr
+      );
+  }
+
+  .grid-container--home {
+    padding-bottom: max(6rem, 20vh);
+    align-items: end;
+
+    overflow-x: hidden;
+  }
+
+  .grid-container--home > *:first-child {
+    grid-column: 2;
+  }
+
+  .grid-container--home > *:last-child {
+    grid-column: 3;
+  }
+
+  .grid-container--destination {
+    justify-items: start;
+    align-content: start;
+    grid-template-areas:
+      '. title title .'
+      '. image tabs .'
+      '. image tabs .'
+      '. image content .';
+  }
+
+  .grid-container--destination > picture,
+  .grid-container--crew > picture {
+    max-width: 90%;
+  }
+
+  .destination-meta {
+    --gap: min(5vw, 6rem);
+    justify-content: flex-start;
+  }
+
+  .grid-container--crew {
+    grid-template-areas:
+      '. title image .'
+      '. content image .'
+      '. dots image .';
+  }
+
+  .grid-container--crew > .dot-indicators {
+    justify-self: start;
+  }
+
+  .grid-container--crew > picture {
+    align-self: end;
   }
 }

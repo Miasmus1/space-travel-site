@@ -1,9 +1,10 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 
 import DesignSystem from './DesignSystem';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Destination from "./components/Destination";
+import Destination from './components/Destination';
+import Crew from './components/Crew';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/destination" element={<Destination />} />
+        <Route path="/crew" element={<Crew />} />
       </Routes>
     </>
   );

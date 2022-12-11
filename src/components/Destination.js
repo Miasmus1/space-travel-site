@@ -18,20 +18,32 @@ const Destination = () => {
   };
 
   return (
-    <div>
+    <section
+      id="main"
+      className="grid-container grid-container--destination flow"
+    >
       <h1 className="numbered-title">
         <span aria-hidden="true">01</span>
-        Destination
+        Pick Your Destination
       </h1>
 
-      <img src="/assets/destination/image-moon.png" alt="The Moon" />
+      <picture>
+        <source
+          srcSet={`/assets/destination/image-${selectedDestination}.webp`}
+          type="image/webp"
+        ></source>
+        <img
+          src={`/assets/destination/image-${selectedDestination}.png`}
+          alt={`The ${selectedDestination}`}
+        />
+      </picture>
 
       <div className="tab-list underline-indicators flex">
         {data.destinations.map((destination) => (
           <button
             key={destination.name}
             aria-selected={selectedDestination === destination.name}
-            className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
+            className="uppercase ff-sans-cond text-accent bg-transparent letter-spacing-2"
             onClick={() => selectedDestinationHandler(destination.name)}
           >
             {destination.name}
@@ -39,29 +51,29 @@ const Destination = () => {
         ))}
       </div>
 
-      <article>
+      <article className="destination-info flow">
         <h2 className="fs-800 uppercase ff-serif">
           {selectedDestinationInfo?.name}
         </h2>
         <p>{selectedDestinationInfo?.description}</p>
 
-        <div className="flex">
+        <div className="flex destination-meta">
           <div>
             <h3 className="text-accent fs-200 uppercase">Avg. Distance</h3>
-            <p className="fs-500 ff-serif uppercase">
+            <p className="ff-serif uppercase">
               {selectedDestinationInfo?.distance}
             </p>
           </div>
 
           <div>
             <h3 className="text-accent fs-200 uppercase">Est. Travel Time</h3>
-            <p className="fs-500 ff-serif uppercase">
+            <p className="ff-serif uppercase">
               {selectedDestinationInfo?.travel}
             </p>
           </div>
         </div>
       </article>
-    </div>
+    </section>
   );
 };
 
