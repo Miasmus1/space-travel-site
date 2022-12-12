@@ -13,8 +13,25 @@ const Destination = () => {
     );
   }, [selectedDestination]);
 
-  const selectedDestinationHandler = (destinationName) => {
-    setSelectedDestination(destinationName);
+  let tabIndex = 0; // State Update Resets tabIndex to 0
+  const selectedDestinationHandler = (e, destinationName) => {
+    if (e.key === 'ArrowRight') {
+      tabIndex++;
+      if (tabIndex > data.destinations.length - 1) {
+        tabIndex = 0;
+      }
+      e.target.parentElement.children[tabIndex].focus();
+    } else if (e.key === 'ArrowLeft') {
+      tabIndex--;
+      if (tabIndex < 0) {
+        tabIndex = data.destinations.length - 1;
+      }
+      e.target.parentElement.children[tabIndex].focus();
+    } else if (e.key === 'Enter' || e.key === ' ') {
+      setSelectedDestination(destinationName);
+    } else if (e.type === 'click') {
+      setSelectedDestination(destinationName);
+    }
   };
 
   return (
@@ -38,13 +55,22 @@ const Destination = () => {
         />
       </picture>
 
-      <div className="tab-list underline-indicators flex">
+      <div
+        className="tab-list underline-indicators flex"
+        role="tablist"
+        aria-label="destination list"
+      >
         {data.destinations.map((destination) => (
           <button
             key={destination.name}
             aria-selected={selectedDestination === destination.name}
+            role="tab"
+            tabIndex={selectedDestination === destination.name ? 0 : -1}
             className="uppercase ff-sans-cond text-accent bg-transparent letter-spacing-2"
-            onClick={() => selectedDestinationHandler(destination.name)}
+            onClick={(e) => selectedDestinationHandler(e, destination.name)}
+            onKeyDown={(e) => {
+              selectedDestinationHandler(e, destination.name);
+            }}
           >
             {destination.name}
           </button>
