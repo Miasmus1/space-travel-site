@@ -13,23 +13,36 @@ const Destination = () => {
     );
   }, [selectedDestination]);
 
-  let tabIndex = 0; // State Update Resets tabIndex to 0
   const selectedDestinationHandler = (e, destinationName) => {
-    if (e.key === 'ArrowRight') {
-      tabIndex++;
-      if (tabIndex > data.destinations.length - 1) {
-        tabIndex = 0;
+    if (e.type === 'keydown') {
+      const tabList = document.querySelectorAll('.tab-list button');
+      const currentTab = document.querySelector('.tab-list button:focus');
+      const currentTabIndex = Array.from(tabList).indexOf(currentTab);
+      tabList[currentTabIndex].setAttribute('tabindex', '-1');
+
+      // change tab index on arrow key press
+      if (e.key === 'ArrowLeft') {
+        if (currentTabIndex === 0) {
+          tabList[tabList.length - 1].focus();
+          tabList[tabList.length - 1].setAttribute('tabindex', '0');
+        } else {
+          tabList[currentTabIndex - 1].focus();
+          tabList[currentTabIndex - 1].setAttribute('tabindex', '0');
+        }
       }
-      e.target.parentElement.children[tabIndex].focus();
-    } else if (e.key === 'ArrowLeft') {
-      tabIndex--;
-      if (tabIndex < 0) {
-        tabIndex = data.destinations.length - 1;
+
+      if (e.key === 'ArrowRight') {
+        if (currentTabIndex === tabList.length - 1) {
+          tabList[0].focus();
+          tabList[0].setAttribute('tabindex', '0');
+        } else {
+          tabList[currentTabIndex + 1].focus();
+          tabList[currentTabIndex + 1].setAttribute('tabindex', '0');
+        }
       }
-      e.target.parentElement.children[tabIndex].focus();
-    } else if (e.key === 'Enter' || e.key === ' ') {
-      setSelectedDestination(destinationName);
-    } else if (e.type === 'click') {
+    }
+
+    if (e.type === 'click') {
       setSelectedDestination(destinationName);
     }
   };
@@ -65,7 +78,7 @@ const Destination = () => {
             key={destination.name}
             aria-selected={selectedDestination === destination.name}
             role="tab"
-            tabIndex={selectedDestination === destination.name ? 0 : -1}
+            tabIndex={selectedDestination === destination.name ? '0' : '-1'}
             className="uppercase ff-sans-cond text-accent bg-transparent letter-spacing-2"
             onClick={(e) => selectedDestinationHandler(e, destination.name)}
             onKeyDown={(e) => {
