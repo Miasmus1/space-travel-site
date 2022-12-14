@@ -11,11 +11,7 @@ const NavBar = () => {
   return (
     <header className="primary-header flex">
       <div>
-        <img
-          src="/assets/shared/logo.svg"
-          alt="Space Tourism Logo"
-          className="logo"
-        />
+        <img src="/assets/shared/logo.svg" alt="Space Tourism Logo" className="logo" />
       </div>
       <button
         onClick={handleToggleNavigation}
@@ -27,10 +23,7 @@ const NavBar = () => {
           Menu
         </span>
       </button>
-      <nav
-        className="flex"
-        style={{ alignItems: 'center', flexDirection: 'row' }}
-      >
+      <nav className="flex" style={{ alignItems: 'center', flexDirection: 'row' }}>
         <ul
           id="primary-navigation"
           className="primary-navigation underline-indicators flex navbar"

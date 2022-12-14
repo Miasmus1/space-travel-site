@@ -3,9 +3,7 @@ const DesignSystem = () => {
     <div className="container">
       <header className="flex design-header">
         <img src="/assets/shared/logo.svg" />
-        <h1 className="text-accent uppercase ff-sans-cond letter-spacing-1 fs-500">
-          Design System
-        </h1>
+        <h1 className="text-accent uppercase ff-sans-cond letter-spacing-1 fs-500">Design System</h1>
       </header>
 
       <section id="colors" style={{ margin: '4rem 0' }}>
@@ -26,12 +24,10 @@ const DesignSystem = () => {
               #0B0D17
             </div>
             <p>
-              <span className="text-accent color-type-mr-3">RGB</span> 11, 13,
-              23
+              <span className="text-accent color-type-mr-3">RGB</span> 11, 13, 23
             </p>
             <p>
-              <span className="text-accent color-type-mr-3">HSL</span> 230°,
-              35%, 7%
+              <span className="text-accent color-type-mr-3">HSL</span> 230°, 35%, 7%
             </p>
           </div>
 
@@ -47,12 +43,10 @@ const DesignSystem = () => {
               #D0D6F9
             </div>
             <p>
-              <span className="text-accent color-type-mr-3">RGB</span> 208, 214,
-              249
+              <span className="text-accent color-type-mr-3">RGB</span> 208, 214, 249
             </p>
             <p>
-              <span className="text-accent color-type-mr-3">HSL</span> 231°,
-              77%, 90%
+              <span className="text-accent color-type-mr-3">HSL</span> 231°, 77%, 90%
             </p>
           </div>
 
@@ -68,12 +62,10 @@ const DesignSystem = () => {
               #FFFFFF
             </div>
             <p>
-              <span className="text-accent color-type-mr-3">RGB</span> 255, 255,
-              255
+              <span className="text-accent color-type-mr-3">RGB</span> 255, 255, 255
             </p>
             <p>
-              <span className="text-accent color-type-mr-3">HSL</span> 0°, 0%,
-              100%
+              <span className="text-accent color-type-mr-3">HSL</span> 0°, 0%, 100%
             </p>
           </div>
         </div>
@@ -84,91 +76,56 @@ const DesignSystem = () => {
           <span>02 </span>Typography
         </h2>
         <div className="flex">
-          <div
-            className="flow"
-            style={{ flexBasis: '100%', '--flow-space': '4rem' }}
-          >
+          <div className="flow" style={{ flexBasis: '100%', '--flow-space': '4rem' }}>
             <div>
-              <p className="text-accent">
-                Heading 1 - Bellefair Regular - 150px
-              </p>
+              <p className="text-accent">Heading 1 - Bellefair Regular - 150px</p>
               <p className="fs-900 ff-serif uppercase">Earth</p>
             </div>
             <div>
-              <p className="text-accent">
-                Heading 2 - Bellefair Regular - 100px
-              </p>
+              <p className="text-accent">Heading 2 - Bellefair Regular - 100px</p>
               <p className="fs-800 ff-serif uppercase">Venus</p>
             </div>
             <div>
-              <p className="text-accent">
-                Heading 3 - Bellefair Regular - 56px
-              </p>
+              <p className="text-accent">Heading 3 - Bellefair Regular - 56px</p>
               <p className="fs-700 ff-serif uppercase">Jupiter & Saturn</p>
             </div>
             <div>
-              <p className="text-accent">
-                Heading 4 - Bellefair Regular - 32px
-              </p>
-              <p className="fs-600 ff-serif uppercase">
-                Uranus, Neptune, & Pluto
-              </p>
+              <p className="text-accent">Heading 4 - Bellefair Regular - 32px</p>
+              <p className="fs-600 ff-serif uppercase">Uranus, Neptune, & Pluto</p>
             </div>
             <div>
-              <p className="text-accent">
-                Heading 5 - Barlow Condensed Regular - 28px - 4.75 Character
-                Space
-              </p>
+              <p className="text-accent">Heading 5 - Barlow Condensed Regular - 28px - 4.75 Character Space</p>
               <p className="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
                 So, you want to travel to space
               </p>
             </div>
           </div>
 
-          <div
-            className="flow"
-            style={{ flexBasis: '100%', '--flow-space': '4rem' }}
-          >
+          <div className="flow" style={{ flexBasis: '100%', '--flow-space': '4rem' }}>
             <div>
-              <p className="text-accent">
-                Subheading 1 - Bellefair Regular - 28px
-              </p>
+              <p className="text-accent">Subheading 1 - Bellefair Regular - 28px</p>
               <p className="fs-500 ff-serif uppercase">384,400 km</p>
             </div>
             <div>
-              <p className="text-accent">
-                Subheading 2 - Barlow Condensed Regular - 14px - 2.35 Character
-                Space
-              </p>
-              <p className="fs-200 ff-sans-cond letter-spacing-3">
-                Avg. Distance
-              </p>
+              <p className="text-accent">Subheading 2 - Barlow Condensed Regular - 14px - 2.35 Character Space</p>
+              <p className="fs-200 ff-sans-cond letter-spacing-3">Avg. Distance</p>
             </div>
             <div>
-              <p className="text-accent">
-                Nav Text - Barlow Condensed Regular - 16px - 2.7 Character Space
-              </p>
-              <p className="fs-300 uppercase ff-sans-cond letter-spacing-2">
-                Europa
-              </p>
+              <p className="text-accent">Nav Text - Barlow Condensed Regular - 16px - 2.7 Character Space</p>
+              <p className="fs-300 uppercase ff-sans-cond letter-spacing-2">Europa</p>
             </div>
             <div>
               <p className="text-accent">Body Text</p>
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
-                neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium,
-                ligula sollicitudin laoreet viverra, tortor libero sodales leo,
-                eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.
-                Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer
-                adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh
-                nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel,
-                nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor
-                libero sodales leo, eget blandit nunc tortor eu nibh. Nullam
-                mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit
-                amet, consectetuer adipiscing elit. Phasellus hendrerit.
-                Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel,
-                dapibus id, mattis vel, nisi.
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh
+                nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin
+                laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.
+                Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit.
+                Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed
+                pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu
+                nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing
+                elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id,
+                mattis vel, nisi.
               </p>
             </div>
           </div>
@@ -182,14 +139,8 @@ const DesignSystem = () => {
 
         {/* navigation */}
         <div>
-          <nav
-            className="flex"
-            style={{ alignItems: 'center', flexDirection: 'column' }}
-          >
-            <ul
-              className="primary-navigation underline-indicators flex"
-              style={{ justifyContent: 'center' }}
-            >
+          <nav className="flex" style={{ alignItems: 'center', flexDirection: 'column' }}>
+            <ul className="primary-navigation underline-indicators flex" style={{ justifyContent: 'center' }}>
               <li className="active">
                 <a href="#" className="uppercase text-white letter-spacing-2">
                   <span>01</span>
@@ -213,22 +164,13 @@ const DesignSystem = () => {
           </nav>
         </div>
 
-        <div
-          className="flex"
-          style={{ marginTop: '5rem', justifyContent: 'space-around' }}
-        >
+        <div className="flex" style={{ marginTop: '5rem', justifyContent: 'space-around' }}>
           <div style={{ marginTop: '5rem' }}>
             {/* explore button */}
-            <a
-              href="#"
-              className="large-button bg-white text-dark ff-serif fs-600 letter-spacing-1 uppercase"
-            >
+            <a href="#" className="large-button bg-white text-dark ff-serif fs-600 letter-spacing-1 uppercase">
               Explore
             </a>
-            <p
-              className="text-accent"
-              style={{ textAlign: 'center', marginTop: '2rem' }}
-            >
+            <p className="text-accent" style={{ textAlign: 'center', marginTop: '2rem' }}>
               Landing Page Main Button
             </p>
           </div>
@@ -242,31 +184,19 @@ const DesignSystem = () => {
           >
             {/* Tabs */}
             <div className="tab-list underline-indicators flex">
-              <button
-                aria-selected="true"
-                className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
-              >
+              <button aria-selected="true" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">
                 Moon
               </button>
 
-              <button
-                aria-selected="false"
-                className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
-              >
+              <button aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">
                 Mars
               </button>
 
-              <button
-                aria-selected="false"
-                className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
-              >
+              <button aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">
                 Europa
               </button>
 
-              <button
-                aria-selected="false"
-                className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
-              >
+              <button aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">
                 Titan
               </button>
             </div>

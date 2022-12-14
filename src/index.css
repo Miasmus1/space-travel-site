@@ -611,6 +611,7 @@ select {
 .grid-container--destination > picture {
   grid-area: image;
   max-width: 60%;
+  align-self: start;
 }
 
 .grid-container--destination > .tab-list {
@@ -688,10 +689,7 @@ select {
   .grid-container {
     text-align: left;
     column-gap: var(--container-gap, 2rem);
-    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
-        2rem,
-        1fr
-      );
+    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
   }
 
   .grid-container--home {
@@ -719,8 +717,7 @@ select {
       '. image content .';
   }
 
-  .grid-container--destination > picture,
-  .grid-container--crew > picture {
+  .grid-container--destination > picture {
     max-width: 90%;
   }
 
@@ -730,6 +727,8 @@ select {
   }
 
   .grid-container--crew {
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 40rem) minmax(0, 20rem) minmax(1rem, 1fr);
+    justify-items: start;
     grid-template-areas:
       '. title image .'
       '. content image .'
@@ -741,6 +740,8 @@ select {
   }
 
   .grid-container--crew > picture {
+    grid-column: span 2;
     align-self: end;
+    max-width: 90%;
   }
 }
