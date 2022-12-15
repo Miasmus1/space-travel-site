@@ -556,22 +556,62 @@ select {
 /* ------------------------- */
 
 /* Home */
-#root {
+body:has(.grid-container--home) {
   background-size: cover;
   background-position: bottom center;
   background-image: url(../public/assets/home/background-home-mobile.jpg);
 }
 
 @media screen and (min-width: 35rem) {
-  #root {
+  body:has(.grid-container--home) {
     background-position: center center;
     background-image: url(../public/assets/home/background-home-tablet.jpg);
   }
 }
 
 @media screen and (min-width: 45rem) {
-  #root {
+  body:has(.grid-container--home) {
     background-image: url(../public/assets/home/background-home-desktop.jpg);
+  }
+}
+
+/* Destination */
+body:has(.grid-container--destination) {
+  background-size: cover;
+  background-position: bottom center;
+  background-image: url(../public/assets/destination/background-destination-mobile.jpg);
+}
+
+@media screen and (min-width: 35rem) {
+  body:has(.grid-container--destination) {
+    background-position: center center;
+    background-image: url(../public/assets/destination/background-destination-tablet.jpg);
+  }
+}
+
+@media screen and (min-width: 45rem) {
+  body:has(.grid-container--destination) {
+    background-image: url(../public/assets/destination/background-destination-desktop.jpg);
+  }
+}
+
+/* Crew */
+body:has(.grid-container--crew) {
+  background-size: cover;
+  background-position: bottom center;
+  background-image: url(../public/assets/crew/background-crew-mobile.jpg);
+}
+
+@media screen and (min-width: 35rem) {
+  body:has(.grid-container--crew) {
+    background-position: center center;
+    background-image: url(../public/assets/crew/background-crew-tablet.jpg);
+  }
+}
+
+@media screen and (min-width: 45rem) {
+  body:has(.grid-container--crew) {
+    background-image: url(../public/assets/crew/background-crew-desktop.jpg);
   }
 }
 
