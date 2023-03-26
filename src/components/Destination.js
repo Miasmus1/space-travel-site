@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import data from '../data.json';
 
+import NavigationButton from './ui/NavigationButton';
+import Image from './ui/Image';
+
 const Destination = () => {
   const [selectedDestination, setSelectedDestination] = useState('Moon');
   const [selectedDestinationInfo, setSelectedDestinationInfo] = useState();
@@ -56,16 +59,7 @@ const Destination = () => {
         Pick Your Destination
       </h1>
 
-      <picture>
-        <source
-          srcSet={`/assets/destination/image-${selectedDestination}.webp`}
-          type="image/webp"
-        ></source>
-        <img
-          src={`/assets/destination/image-${selectedDestination}.png`}
-          alt={`The ${selectedDestination}`}
-        />
-      </picture>
+      <Image path={'destination'} element={selectedDestination} />
 
       <div
         className="tab-list underline-indicators flex"
@@ -73,19 +67,27 @@ const Destination = () => {
         aria-label="destination list"
       >
         {data.destinations.map((destination) => (
-          <button
+          <NavigationButton
             key={destination.name}
-            aria-selected={selectedDestination === destination.name}
-            role="tab"
-            tabIndex={selectedDestination === destination.name ? '0' : '-1'}
-            className="uppercase ff-sans-cond text-accent bg-transparent letter-spacing-2"
-            onClick={(e) => handleSelectedDestination(e, destination.name)}
-            onKeyDown={(e) => {
-              handleSelectedDestination(e, destination.name);
-            }}
+            element={destination}
+            selectedElement={selectedDestination}
+            setSelectedElement={setSelectedDestination}
           >
             {destination.name}
-          </button>
+          </NavigationButton>
+          // <button
+          //   key={destination.name}
+          //   aria-selected={selectedDestination === destination.name}
+          //   role="tab"
+          //   tabIndex={selectedDestination === destination.name ? '0' : '-1'}
+          //   className="uppercase ff-sans-cond text-accent bg-transparent letter-spacing-2"
+          //   onClick={(e) => handleSelectedDestination(e, destination.name)}
+          //   onKeyDown={(e) => {
+          //     handleSelectedDestination(e, destination.name);
+          //   }}
+          // >
+          //   {destination.name}
+          // </button>
         ))}
       </div>
 

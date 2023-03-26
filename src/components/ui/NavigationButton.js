@@ -3,8 +3,8 @@ const NavigationButton = (props) => {
 
   const handleSelectedElement = (e, elementName) => {
     if (e.type === 'keydown') {
-      const tabList = document.querySelectorAll('.dot-indicators button');
-      const currentTab = document.querySelector('.dot-indicators button:focus');
+      const tabList = document.querySelectorAll('button');
+      const currentTab = document.querySelector('button:focus');
       const currentTabIndex = Array.from(tabList).indexOf(currentTab);
 
       if (e.key === 'ArrowLeft') {

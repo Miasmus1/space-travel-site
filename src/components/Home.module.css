@@ -1,18 +1,18 @@
 .home {
-    background: url(../../public/assets/home/background-home-mobile.jpg) no-repeat center center fixed;
-    height: 100vh;
+  background: url(../../public/assets/home/earth-mobile.jpg) no-repeat center center fixed;
+  height: 100vh;
 }
 
 @media screen and (min-width: 375px) {
   .home {
-    background: url(../../public/assets/home/background-home-tablet.jpg) no-repeat center center fixed;
+    background: url(../../public/assets/home/earth-tablet.jpg) no-repeat center center fixed;
     height: 100vh;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .home {
-    background: url(../../public/assets/home/background-home-desktop.jpg) no-repeat center center fixed;
+    background: url(../../public/assets/home/earth-desktop.jpg) no-repeat center center fixed;
     height: 100vh;
   }
 }

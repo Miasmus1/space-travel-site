@@ -1,17 +1,17 @@
 const Image = (props) => {
-  const { element = '' } = props;
+  const { path, element = '' } = props;
 
   return (
     <picture>
       <source
-        srcSet={`/assets/crew/image-${element
+        srcSet={`/assets/${path}/image-${element
           .toLowerCase()
           .split(' ')
           .join('-')}.webp`}
         type="image/webp"
       ></source>
       <img
-        src={`/assets/crew/image-${element
+        src={`/assets/${path}/image-${element
           .toLowerCase()
           .split(' ')
           .join('-')}.png`}

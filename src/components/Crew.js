@@ -52,7 +52,7 @@ const Crew = () => {
         <p>{selectedCrewMemberInfo?.bio}</p>
       </article>
 
-      <Image element={selectedCrewMember} />
+      <Image path={'crew'} element={selectedCrewMember} />
     </section>
   );
 };
