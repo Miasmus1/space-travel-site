@@ -606,7 +606,7 @@ body:has(.grid-container--destination) {
 
 @media screen and (min-width: 45rem) {
   body:has(.grid-container--destination) {
-    background-image: url(../public/assets/destination/test-desktop.jpg);
+    background-image: url(../public/assets/destination/background-destination-desktop.jpg);
   }
 }
 
@@ -771,8 +771,8 @@ body:has(.grid-container--crew) {
     align-content: start;
     grid-template-areas:
       '. title title .'
-      '. . tabs .'
-      '. . tabs .'
+      '. image tabs .'
+      '. image tabs .'
       '. image content .';
   }
 
@@ -803,4 +803,24 @@ body:has(.grid-container--crew) {
     align-self: end;
     max-width: 90%;
   }
+}
+
+/* ------------------------- */
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
 }
