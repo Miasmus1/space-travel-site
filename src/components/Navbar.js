@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
+import classes from './Navbar.module.css';
+
 const NavBar = () => {
   const [toggleNavigation, setToggleNavigation] = useState(false);
 
@@ -9,13 +11,17 @@ const NavBar = () => {
   };
 
   return (
-    <header className="primary-header flex">
+    <header className={`${classes['primary-header']} flex`}>
       <div>
-        <img src="/assets/shared/logo.svg" alt="Space Tourism Logo" className="logo" />
+        <img
+          src="/assets/shared/logo.svg"
+          alt="Space Tourism Logo"
+          className={classes.logo}
+        />
       </div>
       <button
         onClick={handleToggleNavigation}
-        className="mobile-nav-toggle"
+        className={classes['mobile-nav-toggle']}
         aria-controls="primary-navigation"
         aria-expanded={toggleNavigation}
       >
@@ -23,10 +29,13 @@ const NavBar = () => {
           Menu
         </span>
       </button>
-      <nav className="flex" style={{ alignItems: 'center', flexDirection: 'row' }}>
+      <nav
+        className="flex"
+        style={{ alignItems: 'center', flexDirection: 'row' }}
+      >
         <ul
           id="primary-navigation"
-          className="primary-navigation underline-indicators flex navbar"
+          className={`${classes['primary-navigation']} ${classes.navbar} underline-indicators flex`}
           data-visibility={toggleNavigation}
         >
           <NavLink

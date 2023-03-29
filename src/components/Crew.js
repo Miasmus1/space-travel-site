@@ -4,6 +4,8 @@ import data from '../data.json';
 import NavigationButton from './ui/NavigationButton';
 import Image from './ui/Image';
 
+import classes from './Crew.module.css';
+
 const Crew = () => {
   const [selectedCrewMember, setSelectedCrewMember] =
     useState('Douglas Hurley');
@@ -16,7 +18,10 @@ const Crew = () => {
   }, [selectedCrewMember]);
 
   return (
-    <section id="main" className="grid-container grid-container--crew flow">
+    <section
+      id="main"
+      className={`grid-container ${classes['grid-container--crew']} flow`}
+    >
       <h1 className="numbered-title">
         <span aria-hidden="true">02</span>
         Meet Your Crew

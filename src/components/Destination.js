@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import data from '../data.json';
 
+import classes from './Destination.module.css';
+
 import NavigationButton from './ui/NavigationButton';
 import Image from './ui/Image';
 
@@ -19,7 +21,7 @@ const Destination = () => {
   return (
     <section
       id="main"
-      className="grid-container grid-container--destination flow"
+      className={`grid-container ${classes['grid-container--destination']} flow`}
     >
       <h1 className="numbered-title">
         <span aria-hidden="true">01</span>
@@ -45,13 +47,13 @@ const Destination = () => {
         ))}
       </div>
 
-      <article className="destination-info flow">
+      <article className={`${classes['destination-info']} flow`}>
         <h2 className="fs-800 uppercase ff-serif">
           {selectedDestinationInfo?.name}
         </h2>
         <p>{selectedDestinationInfo?.description}</p>
 
-        <div className="flex destination-meta">
+        <div className={`${classes['destination-meta']} flex`}>
           <div>
             <h3 className="text-accent fs-200 uppercase">Avg. Distance</h3>
             <p className="ff-serif uppercase">

@@ -1,18 +1,33 @@
-.home {
-  background: url(../../public/assets/home/earth-mobile.jpg) no-repeat center center fixed;
-  height: 100vh;
+body:has:global(.grid-container--home) {
+  background-size: cover;
+  background-position: bottom center;
+  background-image: url(../../public/assets/home/background-home-mobile.jpg);
 }
 
-@media screen and (min-width: 375px) {
-  .home {
-    background: url(../../public/assets/home/earth-tablet.jpg) no-repeat center center fixed;
-    height: 100vh;
+@media screen and (min-width: 35rem) {
+  body:has:global(.grid-container--home) {
+    background-position: center center;
+    background-image: url(../../public/assets/home/background-home-tablet.jpg);
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .home {
-    background: url(../../public/assets/home/earth-desktop.jpg) no-repeat center center fixed;
-    height: 100vh;
+@media screen and (min-width: 45rem) {
+  body:has:global(.grid-container--home) {
+    background-image: url(../../public/assets/home/background-home-desktop.jpg);
+  }
+
+  .grid-container--home {
+    padding-bottom: max(6rem, 20vh);
+    align-items: end;
+
+    overflow-x: hidden;
+  }
+
+  .grid-container--home>*:first-child {
+    grid-column: 2;
+  }
+
+  .grid-container--home>*:last-child {
+    grid-column: 3;
   }
 }

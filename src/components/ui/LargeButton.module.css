@@ -1,0 +1,35 @@
+.large-button {
+  font-size: 2rem;
+  position: relative;
+  display: inline-grid;
+  /* or inline-block */
+  place-items: center;
+  padding: 0 2em;
+  text-decoration: none;
+  aspect-ratio: 1;
+  /* or width: 100%; height: 100%; */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.large-button::after {
+  content: '';
+  position: absolute;
+  background: hsl(var(--clr-light) / 0.15);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s linear, transform 0.75s ease-in-out;
+}
+
+.large-button:hover::after,
+.large-button:focus::after {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+/* .large-button:hover {
+  box-shadow: 0 0 0 5rem hsl( var(--clr-white) / .25 );
+} */
