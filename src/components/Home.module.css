@@ -1,18 +1,18 @@
-body:has:global(.grid-container--home) {
+body:has(.grid-container--home) {
   background-size: cover;
   background-position: bottom center;
   background-image: url(../../public/assets/home/background-home-mobile.jpg);
 }
 
 @media screen and (min-width: 35rem) {
-  body:has:global(.grid-container--home) {
+  body:has(.grid-container--home) {
     background-position: center center;
     background-image: url(../../public/assets/home/background-home-tablet.jpg);
   }
 }
 
 @media screen and (min-width: 45rem) {
-  body:has:global(.grid-container--home) {
+  body:has(.grid-container--home) {
     background-image: url(../../public/assets/home/background-home-desktop.jpg);
   }
 

@@ -1,8 +1,13 @@
 import LargeButton from './ui/LargeButton';
 
+import classes from './Home.module.css';
+
 const Home = () => {
   return (
-    <main id="main" className="grid-container grid-container--home">
+    <main
+      id="main"
+      className={`grid-container ${classes['grid-container--home']}`}
+    >
       <div>
         <h1 className="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
           So, you want to travel to
