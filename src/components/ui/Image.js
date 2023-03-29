@@ -10,7 +10,7 @@ const Image = (props) => {
       <SwitchTransition mode="out-in">
         <CSSTransition
           key={element}
-          timeout={500}
+          timeout={200}
           classNames="fade"
           nodeRef={nodeRef}
         >

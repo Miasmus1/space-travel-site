@@ -25,12 +25,6 @@
 }
 
 @media screen and (min-width: 35em) {
-  .numbered-title {
-    justify-self: start;
-    margin-block-start: 2rem;
-  }
-
-
   .grid-container--crew {
     padding-bottom: 0;
     grid-template-areas:
