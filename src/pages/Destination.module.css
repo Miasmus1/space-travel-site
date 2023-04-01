@@ -4,7 +4,7 @@ body:has(.grid-container--destination) {
 
 .grid-container--destination {
   --flow-space: 2rem;
-  grid-template-rows: auto min(18rem) auto auto;
+  grid-template-rows: auto min(20rem) auto auto;
   grid-template-areas:
     'title'
     'image'
@@ -46,7 +46,7 @@ body:has(.grid-container--destination) {
   }
 
   .grid-container--destination {
-    grid-template-rows: auto 30rem auto auto;
+    grid-template-rows: auto 25rem auto auto;
   }
 
   .destination-meta {

@@ -3,6 +3,7 @@ body:has(.grid-container--crew) {
 }
 
 .grid-container--crew {
+  grid-template-rows: 5rem 20rem 5rem 15rem;
   grid-template-areas:
     'title'
     'image'
@@ -14,6 +15,7 @@ body:has(.grid-container--crew) {
   grid-area: image;
   max-width: 60%;
   border-bottom: 1px solid hsl(var(--clr-white) / 0.1);
+  align-self: end;
 }
 
 .grid-container--crew>:global(.dot-indicators) {
@@ -22,8 +24,7 @@ body:has(.grid-container--crew) {
 
 .grid-container--crew>:global(.crew-info) {
   grid-area: content;
-  min-height: 15rem;
-  align-self: end;
+  align-self: start;
 }
 
 .grid-container--crew>.crew-info h2 {
@@ -41,8 +42,23 @@ body:has(.grid-container--crew) {
   }
 }
 
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 35rem) {
   .grid-container--crew {
+    grid-template-rows: auto 14rem auto 33rem;
+  }
+
+  body:has(.grid-container--crew) {
+    background-image: url(../../public/assets/crew/background-crew-tablet.jpg);
+  }
+}
+
+@media screen and (min-width: 45em) {
+  body:has(.grid-container--crew) {
+    background-image: url(../../public/assets/crew/background-crew-desktop.jpg);
+  }
+
+  .grid-container--crew {
+    grid-template-rows: unset;
     grid-template-columns: minmax(1rem, 1fr) minmax(0, 40rem) minmax(0, 20rem) minmax(1rem, 1fr);
     justify-items: start;
     grid-template-areas:
@@ -57,19 +73,13 @@ body:has(.grid-container--crew) {
 
   .grid-container--crew>picture {
     grid-column: span 2;
-    align-self: end;
     max-width: 90%;
   }
-}
 
-@media screen and (min-width: 35rem) {
-  body:has(.grid-container--crew) {
-    background-image: url(../../public/assets/crew/background-crew-tablet.jpg);
-  }
-}
 
-@media screen and (min-width: 45rem) {
-  body:has(.grid-container--crew) {
-    background-image: url(../../public/assets/crew/background-crew-desktop.jpg);
+
+  .grid-container--crew>:global(.crew-info) {
+    align-self: end;
+    min-height: 16rem;
   }
 }
