@@ -13,7 +13,7 @@ const NavBar = () => {
   return (
     <header className={`${classes['primary-header']} flex`}>
       <div>
-        <NavLink to="/design-system">
+        <NavLink to="/">
           <img
             src="/assets/shared/logo.svg"
             alt="Space Tourism Logo"

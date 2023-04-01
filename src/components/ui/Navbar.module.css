@@ -96,17 +96,18 @@
 
 @media screen and (min-width: 35em) {
   .primary-navigation {
-    padding-inline: clamp(3rem, 5vw, 5rem);
+    padding-inline: clamp(3rem, 8vw, 10rem);
+    padding-inline-end: 11vw;
   }
 }
 
-@media screen and (min-width: 35em) and (max-width: 44.999em) {
+@media screen and (min-width: 35em) and (max-width: 64.999em) {
   .primary-navigation a>span {
     display: none;
   }
 }
 
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 65em) {
   .primary-header::after {
     content: '';
     display: block;

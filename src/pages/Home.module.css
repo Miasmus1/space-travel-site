@@ -1,14 +1,22 @@
+.grid-container--home {
+  gap: 1rem;
+}
+
+.grid-container--home span {
+  margin-block: 1rem;
+}
+
 body:has(.grid-container--home) {
   background-image: url(../../public/assets/home/background-home-mobile.jpg);
 }
 
-@media screen and (min-width: 35rem) {
+@media screen and (min-width: 35em) {
   body:has(.grid-container--home) {
     background-image: url(../../public/assets/home/background-home-tablet.jpg);
   }
 }
 
-@media screen and (min-width: 45rem) {
+@media screen and (min-width: 65em) {
   body:has(.grid-container--home) {
     background-image: url(../../public/assets/home/background-home-desktop.jpg);
   }

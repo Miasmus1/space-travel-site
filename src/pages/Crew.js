@@ -46,7 +46,7 @@ const Crew = () => {
 
       <article className="crew-info flow" tabIndex="0">
         <header className="flow flow--space-small">
-          <h2 className="fs-600 uppercase ff-serif">
+          <h2 className="fs-600 uppercase ff-serif text-opacity-50">
             {selectedCrewMemberInfo?.role}
           </h2>
           <p className="fs-700 uppercase ff-serif">

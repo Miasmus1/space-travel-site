@@ -63,7 +63,7 @@ const Technology = () => {
 
       <article className={`${classes['technology-info']} flow`} tabIndex="0">
         <header className="flow flow--space-small">
-          <p className="fs-300 uppercase ff-sand-cond text-accent letter-spacing-2">
+          <p className="fs-200 uppercase ff-sand-cond text-accent letter-spacing-2">
             The Terminology...
           </p>
           <h2 className="fs-700 uppercase ff-serif">
@@ -77,9 +77,9 @@ const Technology = () => {
       <Image
         path={'technology'}
         element={`${selectedTechnology}-${
-          windowWidth < 720 ? 'landscape' : 'portrait'
+          windowWidth < 1040 ? 'landscape' : 'portrait'
         }`}
-      ></Image>
+      />
     </section>
   );
 };

@@ -4,7 +4,7 @@ body:has(.grid-container--destination) {
 
 .grid-container--destination {
   --flow-space: 2rem;
-  grid-template-rows: auto min(20rem) auto auto;
+  grid-template-rows: max-content min(57vw) max-content max-content;
   grid-template-areas:
     'title'
     'image'
@@ -46,7 +46,7 @@ body:has(.grid-container--destination) {
   }
 
   .grid-container--destination {
-    grid-template-rows: auto 25rem auto auto;
+    grid-template-rows: auto min(43vw) auto auto;
   }
 
   .destination-meta {
@@ -55,7 +55,7 @@ body:has(.grid-container--destination) {
   }
 }
 
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 65em) {
   body:has(.grid-container--destination) {
     background-image: url(../../public/assets/destination/background-destination-desktop.jpg);
   }
@@ -67,7 +67,7 @@ body:has(.grid-container--destination) {
     grid-template-areas:
       '. title title .'
       '. . tabs .'
-      '. . tabs .'
+      '. image tabs .'
       '. image content .';
   }
 
