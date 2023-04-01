@@ -4,7 +4,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
 import DesignSystem from './DesignSystem';
-import Navbar from './pages/Navbar';
+import Navbar from './components/ui/Navbar';
 import Home from './pages/Home';
 import Destination from './pages/Destination';
 import Crew from './pages/Crew';
