@@ -11,6 +11,7 @@ const Technology = () => {
   const [selectedTechnology, setSelectedTechnology] =
     useState('Launch vehicle');
   const [selectedTechnologyInfo, setSelectedTechnologyInfo] = useState();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     setSelectedTechnologyInfo(
@@ -19,6 +20,18 @@ const Technology = () => {
       )
     );
   }, [selectedTechnology]);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  });
 
   return (
     <section
@@ -50,10 +63,12 @@ const Technology = () => {
 
       <article className={`${classes['technology-info']} flow`} tabIndex="0">
         <header className="flow flow--space-small">
-          <h2 className="fs-600 uppercase ff-serif">The Terminology...</h2>
-          <p className="fs-700 uppercase ff-serif">
-            {selectedTechnologyInfo?.name}
+          <p className="fs-300 uppercase ff-sand-cond text-accent letter-spacing-2">
+            The Terminology...
           </p>
+          <h2 className="fs-700 uppercase ff-serif">
+            {selectedTechnologyInfo?.name}
+          </h2>
         </header>
 
         <p className="text-accent">{selectedTechnologyInfo?.description}</p>
@@ -61,7 +76,9 @@ const Technology = () => {
 
       <Image
         path={'technology'}
-        element={`${selectedTechnology}-portrait`}
+        element={`${selectedTechnology}-${
+          windowWidth < 720 ? 'landscape' : 'portrait'
+        }`}
       ></Image>
     </section>
   );

@@ -9,7 +9,7 @@ const NavigationButton = (props) => {
       );
       const currentTabIndex = Array.from(tabList).indexOf(currentTab);
 
-      if (e.key === 'ArrowLeft') {
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
         if (currentTabIndex === 0) {
           tabList[tabList.length - 1].focus();
           tabList[tabList.length - 1].setAttribute('tabIndex', '0');
@@ -19,7 +19,7 @@ const NavigationButton = (props) => {
         }
       }
 
-      if (e.key === 'ArrowRight') {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
         if (currentTabIndex === tabList.length - 1) {
           tabList[0].focus();
           tabList[0].setAttribute('tabIndex', '0');

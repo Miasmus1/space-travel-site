@@ -20,7 +20,7 @@ function App() {
         Skip to content
       </a>
       <Navbar />
-      <SwitchTransition>
+      <SwitchTransition mode="out-in">
         <CSSTransition
           key={location.key}
           classNames="fade"

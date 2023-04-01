@@ -83,6 +83,8 @@ body {
   line-height: 1.5;
 
   overflow-x: hidden;
+  background-size: cover;
+  transition: background-image 1s ease-in;
 }
 
 #root {
@@ -312,7 +314,6 @@ select {
 }
 
 
-
 /* Primary Navigation */
 
 .underline-indicators>* {
@@ -415,6 +416,7 @@ select {
 
 .numbered-title {
   justify-self: center;
+  align-self: start;
   margin-block: 2rem;
   grid-area: title;
   /* Only works if there is grid area named "title" */

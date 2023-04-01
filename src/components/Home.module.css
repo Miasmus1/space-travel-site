@@ -1,7 +1,5 @@
 body:has(.grid-container--home) {
-  background-size: cover;
   background-image: url(../../public/assets/home/background-home-mobile.jpg);
-  transition: background-image 1s ease-out;
 }
 
 @media screen and (min-width: 35rem) {
