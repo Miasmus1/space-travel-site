@@ -54,7 +54,7 @@ const Crew = () => {
           </p>
         </header>
 
-        <p>{selectedCrewMemberInfo?.bio}</p>
+        <p className="text-accent">{selectedCrewMemberInfo?.bio}</p>
       </article>
 
       <Image path={'crew'} element={selectedCrewMember} />

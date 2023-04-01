@@ -1,12 +1,11 @@
 body:has(.grid-container--home) {
   background-size: cover;
-  background-position: bottom center;
   background-image: url(../../public/assets/home/background-home-mobile.jpg);
+  transition: background-image 1s ease-out;
 }
 
 @media screen and (min-width: 35rem) {
   body:has(.grid-container--home) {
-    background-position: center center;
     background-image: url(../../public/assets/home/background-home-tablet.jpg);
   }
 }

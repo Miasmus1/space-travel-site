@@ -1,0 +1,51 @@
+body:has(.grid-container--technology) {
+  background-size: cover;
+  background-image: url(../../public/assets/technology/background-technology-mobile.jpg);
+  transition: background-image 1s ease-out;
+}
+
+.grid-container--technology {
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) minmax(0, 5rem) minmax(0, 30rem) minmax(0, 20rem) minmax(1rem, 1fr);
+  grid-template-areas:
+    '. title title . .'
+    '. tabs content image .';
+  justify-items: start;
+  align-items: center;
+  padding-inline: 0;
+}
+
+.numbered-title {
+  grid-area: title;
+}
+
+.technology-info {
+  grid-area: content;
+}
+
+.grid-container--technology>picture {
+  grid-area: image;
+  grid-column: span 2;
+  max-width: 85%;
+  justify-self: end;
+}
+
+.grid-container--technology>:global(.number-indicators) {
+  flex-direction: column;
+  grid-area: tabs;
+  ;
+}
+
+
+
+@media screen and (min-width: 35em) {
+  body:has(.grid-container--technology) {
+    background-image: url(../../public/assets/technology/background-technology-tablet.jpg);
+  }
+}
+
+@media screen and (min-width: 45em) {
+  body:has(.grid-container--technology) {
+    background-image: url(../../public/assets/technology/background-technology-desktop.jpg);
+  }
+}

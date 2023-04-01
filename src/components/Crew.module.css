@@ -1,3 +1,9 @@
+body:has(.grid-container--crew) {
+  background-size: cover;
+  background-image: url(../../public/assets/crew/background-crew-mobile.jpg);
+  transition: background-image 1s ease-out;
+}
+
 .grid-container--crew {
   grid-template-areas:
     'title'
@@ -56,15 +62,8 @@
   }
 }
 
-body:has(.grid-container--crew) {
-  background-size: cover;
-  background-position: bottom center;
-  background-image: url(../../public/assets/crew/background-crew-mobile.jpg);
-}
-
 @media screen and (min-width: 35rem) {
   body:has(.grid-container--crew) {
-    background-position: center center;
     background-image: url(../../public/assets/crew/background-crew-tablet.jpg);
   }
 }

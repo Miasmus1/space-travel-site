@@ -51,7 +51,7 @@ const Destination = () => {
         <h2 className="fs-800 uppercase ff-serif">
           {selectedDestinationInfo?.name}
         </h2>
-        <p>{selectedDestinationInfo?.description}</p>
+        <p className="text-accent">{selectedDestinationInfo?.description}</p>
 
         <div className={`${classes['destination-meta']} flex`}>
           <div>

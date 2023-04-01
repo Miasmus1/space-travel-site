@@ -13,11 +13,13 @@ const NavBar = () => {
   return (
     <header className={`${classes['primary-header']} flex`}>
       <div>
-        <img
-          src="/assets/shared/logo.svg"
-          alt="Space Tourism Logo"
-          className={classes.logo}
-        />
+        <NavLink to="/design-system">
+          <img
+            src="/assets/shared/logo.svg"
+            alt="Space Tourism Logo"
+            className={classes.logo}
+          />
+        </NavLink>
       </div>
       <button
         onClick={handleToggleNavigation}
