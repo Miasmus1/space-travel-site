@@ -35,51 +35,43 @@ const NavBar = () => {
         className="flex"
         style={{ alignItems: 'center', flexDirection: 'row' }}
       >
-        <ul
+        <div
           id="primary-navigation"
           className={`${classes['primary-navigation']} ${classes.navbar} underline-indicators flex`}
           data-visibility={toggleNavigation}
         >
-          <li>
-            <NavLink
-              className={`ff-sans-cond uppercase text-white letter-spacing-2 
+          <NavLink
+            className={`ff-sans-cond uppercase text-white letter-spacing-2 
             ${(navData) => (navData.isActive ? 'active' : '')}`}
-              to="/"
-            >
-              <span aria-hidden="true">00</span>Home
-            </NavLink>
-          </li>
+            to="/"
+          >
+            <span aria-hidden="true">00</span>Home
+          </NavLink>
 
-          <li>
-            <NavLink
-              className={`ff-sans-cond uppercase text-white letter-spacing-2 
+          <NavLink
+            className={`ff-sans-cond uppercase text-white letter-spacing-2 
             ${(navData) => (navData.isActive ? 'active' : '')}`}
-              to="/destination"
-            >
-              <span aria-hidden="true">01</span>Destination
-            </NavLink>
-          </li>
+            to="/destination"
+          >
+            <span aria-hidden="true">01</span>Destination
+          </NavLink>
 
-          <li>
-            <NavLink
-              className={`ff-sans-cond uppercase text-white letter-spacing-2 
+          <NavLink
+            className={`ff-sans-cond uppercase text-white letter-spacing-2 
             ${(navData) => (navData.isActive ? 'active' : '')}`}
-              to="/crew"
-            >
-              <span aria-hidden="true">02</span>Crew
-            </NavLink>
-          </li>
+            to="/crew"
+          >
+            <span aria-hidden="true">02</span>Crew
+          </NavLink>
 
-          <li>
-            <NavLink
-              className={`ff-sans-cond uppercase text-white letter-spacing-2 
+          <NavLink
+            className={`ff-sans-cond uppercase text-white letter-spacing-2 
             ${(navData) => (navData.isActive ? 'active' : '')}`}
-              to="/technology"
-            >
-              <span aria-hidden="true">03</span>Technology
-            </NavLink>
-          </li>
-        </ul>
+            to="/technology"
+          >
+            <span aria-hidden="true">03</span>Technology
+          </NavLink>
+        </div>
       </nav>
     </header>
   );
