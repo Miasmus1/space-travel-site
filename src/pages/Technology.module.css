@@ -60,6 +60,10 @@ body:has(.grid-container--technology) {
     justify-self: end;
   }
 
+  .grid-container--technology>:global(.number-indicators) {
+    flex-direction: column;
+  }
+
   .technology-info {
     align-self: center;
   }

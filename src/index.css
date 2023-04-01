@@ -367,10 +367,6 @@ select {
   background-color: hsl(var(--clr-white) / 1);
 }
 
-.number-indicators {
-  flex-direction: column;
-}
-
 .number-indicators>* {
   all: unset;
   cursor: pointer;
