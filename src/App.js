@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
@@ -33,6 +33,7 @@ function App() {
             <Route path="/crew" element={<Crew />} />
             <Route path="/technology" element={<Technology />} />
             <Route path="/design-system" element={<DesignSystem />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </CSSTransition>
       </SwitchTransition>
