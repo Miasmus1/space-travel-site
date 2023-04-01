@@ -3,8 +3,8 @@ import data from '../data.json';
 
 import classes from './Destination.module.css';
 
-import NavigationButton from './ui/NavigationButton';
-import Image from './ui/Image';
+import NavigationButton from '../components/ui/NavigationButton';
+import Image from '../components/ui/Image';
 
 const Destination = () => {
   const [selectedDestination, setSelectedDestination] = useState('Moon');

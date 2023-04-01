@@ -1,4 +1,4 @@
-import LargeButton from './ui/LargeButton';
+import LargeButton from '../components/ui/LargeButton';
 
 import classes from './Home.module.css';
 

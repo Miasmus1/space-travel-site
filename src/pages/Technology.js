@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 import data from '../data.json';
 
-import NavigationButton from './ui/NavigationButton';
-import Image from './ui/Image';
+import NavigationButton from '../components/ui/NavigationButton';
+import Image from '../components/ui/Image';
 
 import classes from './Technology.module.css';
 

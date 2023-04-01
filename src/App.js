@@ -4,11 +4,11 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
 import DesignSystem from './DesignSystem';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Destination from './components/Destination';
-import Crew from './components/Crew';
-import Technology from './components/Technology';
+import Navbar from './pages/Navbar';
+import Home from './pages/Home';
+import Destination from './pages/Destination';
+import Crew from './pages/Crew';
+import Technology from './pages/Technology';
 
 function App() {
   const nodeRef = useRef(null);
